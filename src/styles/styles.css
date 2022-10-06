@@ -1,0 +1,121 @@
+body {
+    overflow: hidden;
+
+    font-family: sans-serif;
+}
+
+.models-list {
+    position: absolute;
+    bottom: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: black;
+    opacity: 0;
+    right: 0;
+
+    z-index: 1000;
+}
+
+.models-list.open {
+    opacity: 0.7;
+}
+
+.models-list ul {
+    margin-top: 100px;
+    list-style: none;
+    text-align: center;
+
+    padding: 0;
+}
+
+.models-list li {
+    margin-bottom: 20px;
+}
+
+.models-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.models-list-open {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    padding: 10px 40px 10px 0;
+
+    background-color: rgba(255, 255, 255, 0.551);
+    font-size: 22px;
+    font-weight: 500;
+
+    z-index: 1001;
+
+    cursor: pointer;
+}
+
+.models-list-open span {
+    position: relative;
+
+    padding: 0 20px;
+}
+.models-list-open.active span::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: 10px;
+
+    width: 30px;
+    height: 2px;
+
+    background-color: black;
+
+    transform: rotate(45deg);
+}
+
+.models-list-open.active span::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -30px;
+
+    width: 30px;
+    height: 2px;
+
+    background-color: black;
+
+    transform: rotate(135deg);
+}
+
+.models-list-open span::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: 7px;
+
+    width: 30px;
+    height: 2px;
+
+    background-color: black;
+
+    transform: rotate(0);
+}
+
+.models-list-open span::before {
+    content: "";
+    position: absolute;
+    top: 13px;
+    right: -30px;
+
+    width: 30px;
+    height: 2px;
+
+    background-color: black;
+
+    transform: rotate(0);
+}
+
+.models-list-open:hover {
+}

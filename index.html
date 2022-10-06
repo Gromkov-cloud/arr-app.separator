@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <!-- <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script> -->
+        <script src="./src/scripts/index.js"></script>
+        <script src="./src/scripts/menu.js"></script>
+        <link rel="stylesheet" href="./src/styles/styles.css" />
+    </head>
+    <body>
+        <div class="models-list-open"><span>Меню</span></div>
+        <div class="models-list">
+            <ul>
+                <li><a href="">Cепаратор</a></li>
+                <li><a href="">Электродегидратор</a></li>
+                <li><a href="">Трубчатая печь</a></li>
+                <li><a href="">Хранилища</a></li>
+                <li><a href="">Факелы</a></li>
+                <li><a href="">Реактор</a></li>
+                <li><a href="">Ректификационные колонны</a></li>
+            </ul>
+        </div>
+
+        <a-scene
+            embedded
+            arjs
+            renderer="logarithmicDepthBuffer: true;"
+            vr-mode-ui="enabled: false"
+            gesture-detector
+            id="scene"
+        >
+            <!-- separator -->
+            <a-marker
+                preset="custom"
+                type="pattern"
+                url="./src/markers/separator/pattern.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="separator"
+            >
+                <a-entity
+                    positon="0 0 0"
+                    scale="0.05 0.05 0.05"
+                    id="separator"
+                    class="clickable"
+                    gesture-handler
+                    gltf-model="./src/models/oil_gaz_water_separator.glb"
+                >
+                </a-entity>
+            </a-marker>
+
+            <a-entity light="type: ambient; color: #BBB"></a-entity>
+            <a-entity
+                light="type: directional; color: #FFF; intensity: 1.4"
+                position="-0.5 1 1"
+            ></a-entity>
+
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
