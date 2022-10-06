@@ -67,7 +67,7 @@
             vr-mode-ui="enabled: false"
             gesture-detector
             id="scene"
-            background="color: white"
+            reflection="directionalLight:a-light#dirlight;"
         >
             <!-- separator -->
             <a-marker
@@ -91,13 +91,19 @@
                 </a-entity>
             </a-marker>
 
-            <a-entity light="type: ambient; color: #FFF"></a-entity>
+            <!-- <a-entity light="type: ambient; color: #FFF"></a-entity>
             <a-entity
                 light="type: directional; color: #FFF; intensity: 1.4"
                 position="-0.5 1 1"
-            ></a-entity>
+            ></a-entity> -->
 
             <a-entity camera></a-entity>
         </a-scene>
+        <a-light
+            id="dirlight"
+            intensity="1"
+            light="castShadow:true;type:directional"
+            position="1 1 1"
+        ></a-light>
     </body>
 </html>
