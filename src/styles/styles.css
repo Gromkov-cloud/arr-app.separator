@@ -12,15 +12,16 @@ body {
     height: 100vh;
 
     background-color: black;
-    opacity: 0;
     right: 0;
 
-    z-index: -10;
+    z-index: -5;
+    display: none;
 }
 
 .models-list.open {
-    opacity: 0.7;
+    display: block;
     z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.908);
 }
 
 .models-list ul {
@@ -154,4 +155,33 @@ body {
 
 .preloader span {
     padding-top: 20px;
+}
+
+.model-info-bar {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+
+    padding: 10px 20px;
+    min-width: 200px;
+    background-color: rgba(255, 255, 255, 0.551);
+
+    text-align: center;
+
+    border-radius: 8px;
+}
+
+.model-info-bar.active {
+    display: block;
+}
+
+.model-info-bar p {
+    padding: 0;
+    margin: 0;
+
+    font-weight: 500;
+    font-size: 16px;
 }
